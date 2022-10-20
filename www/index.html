@@ -196,7 +196,7 @@
         // ButtonBがクリックされた時の処理
         function btnBClick(e) {
             active = false;
-            startTime = rest;
+            
         }
 
         // ButtonCがクリックされた時の処理
@@ -216,6 +216,15 @@
                 period = 28800 * parseInt($("#minute").val()) + parseInt($("#second").val());
             $("#time").html("経過時間： 0");
             $("#remain").html("残り時間： " + period);
+         }
+         // ButtonEがクリックされた時の処理
+         function btnEClick(e) {
+             alarm();
+                active = false;
+                period = 10512000 * parseInt($("#minute").val()) + parseInt($("#second").val());
+            $("#time").html("経過時間： 0");
+            $("#remain").html("残り時間： " + period);
+
          }
 
         // 繰り返し実行する処理
@@ -247,7 +256,8 @@
     <button id="btnA">Start</button>
     <button id="btnB">Stop</button>
     <button id="btnC">Set</button>
-     <button id="btnD">一日</button>
+     <button id="btnD">1日</button>
+     <button id="btnE">1年</button>
     <input type="number" id="minute" value=3>
     <input type="number" id="second" value=0>
 </body>
