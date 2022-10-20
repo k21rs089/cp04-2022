@@ -42,6 +42,9 @@
              $('#btnD').click(function(e) {
                 btnDClick(e);
             });
+            $('#btnE').click(function(e) {
+                btnEClick(e);
+            });
             init();
         });
 
@@ -166,6 +169,7 @@
             $('#btnB').prop('disabled', false);
             $('#btnC').prop('disabled', false);
             $('#btnD').prop('disabled', false);
+            $('#btnE').prop('disabled', false);
         }
 
         // Alarmの処理
@@ -207,6 +211,7 @@
         }
         // ButtonDがクリックされた時の処理
          function btnDClick(e) {
+                alarm();
                 active = false;
                 period = 28800 * parseInt($("#minute").val()) + parseInt($("#second").val());
             $("#time").html("経過時間： 0");
